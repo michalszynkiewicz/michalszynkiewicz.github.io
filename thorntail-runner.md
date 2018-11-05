@@ -9,7 +9,7 @@ Thorntail Runner uses jboss modules approach. It was tested with all the issues 
 
 ## How to use Runner
 
-### Make it visible for your browser
+### Make it visible for your IDE 
 In order to use Thorntail Runner, you have add `io.thorntail:thorntail-runner` to your application. If you use Maven, you can simply make your project depend on it.
 If you use maven, add the following to your dependencies. Don't worry, neither the runner itself nor its dependencies won't leak to the fat jar that thorntail maven plugin generates for your project.
 
