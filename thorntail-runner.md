@@ -24,7 +24,7 @@ If you use maven, add the following to your dependencies. Don't worry, neither t
 
 ### Run it
 If you use IntelliJ IDEA, use Ctrl/Cmd+N to find the `Runner` class. In Eclipse you can use Ctrl/Cmd+Shift+T.
-When you found it, it's just a matter of running it's main method.
+When you found it, it's just a matter of running it's `main` method.
 
 You can customize Runner's behavior by using specific system properties.
 List of all of them can be found in the javadoc of the class (or [here](https://github.com/thorntail/thorntail/blob/master/thorntail-runner/src/main/java/org/wildfly/swarm/runner/Runner.java))
