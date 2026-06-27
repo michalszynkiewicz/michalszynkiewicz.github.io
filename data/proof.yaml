@@ -1,0 +1,13 @@
+# Proof points shown on the landing page. Edit freely; `body` allows simple HTML.
+items:
+  - title: "Systems at scale"
+    body: "High-throughput services and distributed systems at Meta — the engineering of moving real traffic without falling over, and the performance work that makes it economical."
+
+  - title: "Open-source frameworks"
+    body: "Core framework work on the <a href=\"https://quarkus.io\">Quarkus</a> team at Red Hat — building the substrate other developers build on, where fast and efficient is the whole premise."
+
+  - title: "Agents from scratch"
+    body: "I built <strong>miniswe</strong>, a coding agent written from the ground up, to understand agents at the engineering level — not as a framework black box."
+    link:
+      label: "See miniswe"
+      param: "miniswe"

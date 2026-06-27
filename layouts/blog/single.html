@@ -1,0 +1,21 @@
+{{ define "main" }}
+<article class="wrap post">
+  <header class="post-head">
+    <p class="kicker">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      <span class="dot" aria-hidden="true">·</span>{{ .ReadingTime }} min read
+    </p>
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{ with .Description }}<p class="post-lede">{{ . }}</p>{{ end }}
+  </header>
+
+  <div class="prose post-body">
+    {{ .Content }}
+  </div>
+
+  <footer class="post-foot">
+    <a class="more-link" href="{{ "/blog/" | relURL }}"><span aria-hidden="true">←</span> All posts</a>
+    <a class="more-link" href="mailto:{{ site.Params.email }}?subject={{ .Title }}">Reply by email</a>
+  </footer>
+</article>
+{{ end }}

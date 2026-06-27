@@ -1,0 +1,8 @@
+{{- /* Privacy-friendly analytics (GoatCounter): no cookies, no IP stored, no banner.
+       Loads only in production builds, so local `hugo server` previews aren't counted.
+       Enable by setting `goatcounter` in hugo.toml to your count endpoint. */ -}}
+{{- if hugo.IsProduction }}
+  {{- with site.Params.goatcounter }}
+<script data-goatcounter="{{ . }}" async src="//gc.zgo.at/count.js"></script>
+  {{- end }}
+{{- end }}

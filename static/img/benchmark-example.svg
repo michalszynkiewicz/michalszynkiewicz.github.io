@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img"
+     aria-label="Bar chart: resolve rate by agent variant (illustrative data)"
+     font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <style>
+    .ink   { fill: #1b1a17; }
+    .muted { fill: #74716a; }
+    .grid  { stroke: #e6e3d8; stroke-width: 1; }
+    .bar   { fill: #2f53c9; }
+    .bar-hi{ fill: #21408f; }
+    .lbl   { font-size: 13px; }
+    .val   { font-size: 13px; font-weight: 600; }
+    .axis  { font-size: 12px; }
+    @media (prefers-color-scheme: dark) {
+      .ink { fill: #ecebe6; } .muted { fill: #918e87; }
+      .grid { stroke: #2c2c35; } .bar { fill: #8fa9ff; } .bar-hi { fill: #aebeff; }
+    }
+  </style>
+
+  <!-- title -->
+  <text x="40" y="34" class="ink" font-size="16" font-weight="700">Resolve rate by variant</text>
+  <text x="40" y="54" class="muted" font-size="12">Illustrative placeholder data — replace with your run</text>
+
+  <!-- gridlines + y labels (0–60%) -->
+  <g class="axis muted">
+    <line class="grid" x1="60" y1="300" x2="700" y2="300"/>
+    <line class="grid" x1="60" y1="240" x2="700" y2="240"/>
+    <line class="grid" x1="60" y1="180" x2="700" y2="180"/>
+    <line class="grid" x1="60" y1="120" x2="700" y2="120"/>
+    <text x="52" y="304" text-anchor="end">0%</text>
+    <text x="52" y="244" text-anchor="end">20%</text>
+    <text x="52" y="184" text-anchor="end">40%</text>
+    <text x="52" y="124" text-anchor="end">60%</text>
+  </g>
+
+  <!-- bars: scale = 3px per %  (height = pct*3, baseline y=300) -->
+  <!-- Baseline 42% -> 126 -->
+  <rect class="bar"    x="92"  y="174" width="96" height="126" rx="3"/>
+  <text x="140" y="160" class="ink val" text-anchor="middle">42%</text>
+  <text x="140" y="324" class="ink lbl" text-anchor="middle">Baseline</text>
+  <!-- +retrieval 51% -> 153 -->
+  <rect class="bar"    x="244" y="147" width="96" height="153" rx="3"/>
+  <text x="292" y="133" class="ink val" text-anchor="middle">51%</text>
+  <text x="292" y="324" class="ink lbl" text-anchor="middle">+retrieval</text>
+  <!-- +self-check 55% -> 165 -->
+  <rect class="bar"    x="396" y="135" width="96" height="165" rx="3"/>
+  <text x="444" y="121" class="ink val" text-anchor="middle">55%</text>
+  <text x="444" y="324" class="ink lbl" text-anchor="middle">+self-check</text>
+  <!-- both 58% -> 174 (highlight) -->
+  <rect class="bar-hi" x="548" y="126" width="96" height="174" rx="3"/>
+  <text x="596" y="112" class="ink val" text-anchor="middle">58%</text>
+  <text x="596" y="324" class="ink lbl" text-anchor="middle">+ both</text>
+</svg>

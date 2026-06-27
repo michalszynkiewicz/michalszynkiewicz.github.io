@@ -1,0 +1,54 @@
+baseURL = "https://michalszynkiewicz.dev/"
+locale = "en"
+title = "Michał Szynkiewicz"
+enableGitInfo = false
+
+# Keep the site tight: no tag/category pages.
+disableKinds = ["taxonomy", "term"]
+
+# Home feed / "recent posts" pull from the blog section.
+[params]
+  tagline = "Software & systems engineering for production LLM and agent systems"
+  description = "Software and systems engineer (ex-Meta, ex–Red Hat Quarkus core team). Distributed systems, open-source frameworks, developer tooling, and — recently — agents and MCP."
+  author = "Michał Szynkiewicz"
+  mainSections = ["blog"]
+
+  # --- Edit these: contact + proof links ---
+  email = "michal.l.szynkiewicz@gmail.com"
+  linkedin = "https://www.linkedin.com/in/michalszynkiewicz/"
+  github = "https://github.com/michalszynkiewicz"
+  miniswe = "https://github.com/michalszynkiewicz/miniswe"
+
+  # Default Open Graph / Twitter share image (used when a page sets none of its own).
+  images = ["img/og-default.png"]
+
+  # Privacy-friendly analytics (GoatCounter) — no cookies, no IP stored, no banner needed.
+  #   1. Register a site code at https://www.goatcounter.com  (e.g. "michalsz")
+  #   2. Paste your count endpoint here:  https://YOURCODE.goatcounter.com/count
+  #   3. Your dashboard then lives at:     https://YOURCODE.goatcounter.com
+  # Leave empty to disable. Only loads in production builds (never `hugo server`).
+  goatcounter = ""
+
+[menu]
+  [[menu.main]]
+    name = "Blog"
+    pageRef = "/blog"
+    weight = 10
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true              # allow inline HTML (callouts, figures) in your Markdown
+  [markup.goldmark.parser]
+    wrapStandAloneImageWithinParagraph = false   # let standalone images render as <figure> blocks
+  [markup.highlight]
+    noClasses = false          # emit CSS classes so we can theme code for light + dark
+    lineNos = false
+    tabWidth = 2
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+[minify]
+  disableXML = true            # keep RSS/sitemap readable
+
+[taxonomies]                   # (intentionally empty — disabled above)

@@ -1,0 +1,58 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="wrap hero-inner">
+    <p class="kicker">{{ .Params.hero_kicker }}</p>
+    <h1 class="hero-title">{{ .Params.hero_headline }}</h1>
+    <p class="hero-sub">{{ .Params.hero_sub }}</p>
+    <div class="hero-cta">
+      <a class="btn" href="mailto:{{ site.Params.email }}">Get in touch</a>
+      <a class="btn btn-ghost" href="{{ "/blog/" | relURL }}">Read the blog</a>
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="wrap proof-grid">
+    {{ range hugo.Data.proof.items }}
+    <article class="proof-item">
+      <h2 class="proof-title">{{ .title }}</h2>
+      <p class="proof-body">{{ .body | safeHTML }}</p>
+      {{ with .link }}
+        {{ $url := index site.Params .param }}
+        <a class="proof-link" href="{{ $url }}" target="_blank" rel="noopener">{{ .label }} <span aria-hidden="true">→</span></a>
+      {{ end }}
+    </article>
+    {{ end }}
+  </div>
+</section>
+
+{{ with .Content }}
+<section class="bio">
+  <div class="wrap prose">
+    {{ . }}
+  </div>
+</section>
+{{ end }}
+
+<section class="latest">
+  <div class="wrap">
+    <div class="section-head-row">
+      <h2 class="section-head">Writing</h2>
+      <a class="more-link" href="{{ "/blog/" | relURL }}">All posts <span aria-hidden="true">→</span></a>
+    </div>
+    <ul class="post-list">
+      {{ range first 4 (where site.RegularPages "Section" "blog") }}
+      <li class="post-row">
+        <a class="post-row-link" href="{{ .RelPermalink }}">
+          <span class="post-row-text">
+            <span class="post-row-title">{{ .Title }}</span>
+            {{ with .Description }}<span class="post-row-desc">{{ . }}</span>{{ end }}
+          </span>
+          <time class="post-row-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2006" }}</time>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
