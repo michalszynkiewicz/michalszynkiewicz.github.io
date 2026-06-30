@@ -27,7 +27,7 @@ disableKinds = ["taxonomy", "term"]
   #   2. Paste your count endpoint here:  https://YOURCODE.goatcounter.com/count
   #   3. Your dashboard then lives at:     https://YOURCODE.goatcounter.com
   # Leave empty to disable. Only loads in production builds (never `hugo server`).
-  goatcounter = ""
+  goatcounter = "https://michalszynkiewicz.goatcounter.com/count"
 
 [menu]
   [[menu.main]]
